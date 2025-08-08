@@ -1,4 +1,4 @@
-const CACHE = "heic-converter-v2"; // bump this when you ship changes
+const CACHE = "heic-converter-v4"; // bump this when you ship changes
 const STATIC_ASSETS = [
   "/",
   "/index.html",
