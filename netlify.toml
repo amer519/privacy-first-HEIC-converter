@@ -10,72 +10,7 @@
   [headers.values]
     Cache-Control = "public, max-age=600"
 
-# Clean path -> html rewrites
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/heic-to-jpg"
-  to = "/heic-to-jpg.html"
-  status = 200
-
-[[redirects]]
-  from = "/heic-to-png"
-  to = "/heic-to-png.html"
-  status = 200
-
-[[redirects]]
-  from = "/batch-heic-to-jpg"
-  to = "/batch-heic-to-jpg.html"
-  status = 200
-
-[[redirects]]
-  from = "/iphone-heic-to-jpg"
-  to = "/iphone-heic-to-jpg.html"
-  status = 200
-
-[[redirects]]
-  from = "/windows-heic-to-jpg"
-  to = "/windows-heic-to-jpg.html"
-  status = 200
-
-[[redirects]]
-  from = "/mac-heic-to-jpg"
-  to = "/mac-heic-to-jpg.html"
-  status = 200
-
-[[redirects]]
-  from = "/heif-to-jpg"
-  to = "/heif-to-jpg.html"
-  status = 200
-
-[[redirects]]
-  from = "/heic-to-jpeg"
-  to = "/heic-to-jpeg.html"
-  status = 200
-
-[[redirects]]
-  from = "/heic-quality-100"
-  to = "/heic-quality-100.html"
-  status = 200
-
-[[redirects]]
-  from = "/heic-exif-keep"
-  to = "/heic-exif-keep.html"
-  status = 200
-
-[[redirects]]
-  from = "/heic-to-jpg-no-upload"
-  to = "/heic-to-jpg-no-upload.html"
-  status = 200
-
-[[redirects]]
-  from = "/what-is-heic"
-  to = "/what-is-heic.html"
-  status = 200
-
-
-# Pretty URLs by redirecting clean paths to the html files
-# Netlify supports _redirects file in /public for static hosting.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache"
