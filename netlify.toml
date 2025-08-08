@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=600"
+
+# Pretty URLs by redirecting clean paths to the html files
+# Netlify supports _redirects file in /public for static hosting.

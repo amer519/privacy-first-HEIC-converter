@@ -1,0 +1,68 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "framework": "vite",
+  "env": {},
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/.html",
+      "destination": "/"
+    },
+    {
+      "source": "/heic-to-jpg.html",
+      "destination": "/heic-to-jpg"
+    },
+    {
+      "source": "/heic-to-png.html",
+      "destination": "/heic-to-png"
+    },
+    {
+      "source": "/batch-heic-to-jpg.html",
+      "destination": "/batch-heic-to-jpg"
+    },
+    {
+      "source": "/iphone-heic-to-jpg.html",
+      "destination": "/iphone-heic-to-jpg"
+    },
+    {
+      "source": "/windows-heic-to-jpg.html",
+      "destination": "/windows-heic-to-jpg"
+    },
+    {
+      "source": "/mac-heic-to-jpg.html",
+      "destination": "/mac-heic-to-jpg"
+    },
+    {
+      "source": "/heif-to-jpg.html",
+      "destination": "/heif-to-jpg"
+    },
+    {
+      "source": "/heic-to-jpeg.html",
+      "destination": "/heic-to-jpeg"
+    },
+    {
+      "source": "/heic-quality-100.html",
+      "destination": "/heic-quality-100"
+    },
+    {
+      "source": "/heic-exif-keep.html",
+      "destination": "/heic-exif-keep"
+    },
+    {
+      "source": "/heic-to-jpg-no-upload.html",
+      "destination": "/heic-to-jpg-no-upload"
+    },
+    {
+      "source": "/what-is-heic.html",
+      "destination": "/what-is-heic"
+    }
+  ]
+}
