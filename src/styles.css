@@ -13,3 +13,5 @@ button:disabled { @apply opacity-50 cursor-not-allowed; }
 .badge { @apply inline-flex items-center gap-2 text-xs px-2.5 py-1 rounded-full bg-gray-100; }
 .hero-grad { background: radial-gradient(1200px 500px at 50% -200px, #dbeafe 0%, transparent 60%); }
 footer a { @apply hover:no-underline; }
+
+.prose a { @apply text-blue-600 underline hover:no-underline; }
