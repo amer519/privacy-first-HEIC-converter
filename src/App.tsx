@@ -1,8 +1,8 @@
-
 import React, { useCallback, useMemo, useRef, useState } from "react";
 import Dropzone from "./components/Dropzone";
 import OptionsPanel from "./components/OptionsPanel";
 import FileItem from "./components/FileItem";
+import SeoCopy from "./components/SeoCopy";
 import Footer from "./components/Footer";
 import { convertMany } from "./utils/convert";
 
@@ -43,6 +43,10 @@ export default function App() {
   const [maxHeight, setMaxHeight] = useState<number | null>(null);
   const [isConverting, setIsConverting] = useState(false);
 
+  // Toast state
+  const [toast, setToast] = useState<string | null>(null);
+  const toastTimer = useRef<number | null>(null);
+
   const onFiles = useCallback((files: File[]) => {
     const items = files
       .filter(f => /heic|heif$/i.test(f.name) || /image\/heic|image\/heif/.test(f.type))
@@ -55,6 +59,11 @@ export default function App() {
       return;
     }
     setQueue(prev => [...prev, ...items]);
+
+    // Toast feedback
+    setToast(`${items.length} file${items.length > 1 ? "s" : ""} added`);
+    if (toastTimer.current) window.clearTimeout(toastTimer.current);
+    toastTimer.current = window.setTimeout(() => setToast(null), 2000);
   }, []);
 
   const clearQueue = useCallback(() => setQueue([]), []);
@@ -135,9 +144,21 @@ export default function App() {
             This tool runs entirely in your browser. There is no server upload. You can go offline and it still works after the first load.
           </p>
         </section>
+
+        {/* SEO copy lives inside main to avoid layout overlap */}
+        <SeoCopy pageKey={pageKey} />
       </main>
 
       <Footer />
+
+      {/* Toast UI */}
+      {toast && (
+        <div className="fixed top-4 right-4 z-50">
+          <div className="bg-gray-900 text-white text-sm px-4 py-2 rounded-xl shadow-soft">
+            {toast}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
